@@ -1,0 +1,10 @@
+import pandas as pd
+df = pd.read_csv("pandas.csv")
+print("Original Data:")
+print(df)
+print("\nMissing Values:")
+print(df.isnull())
+df["Calories"].fillna(df["Calories"].mean(), inplace=True)
+df["Price"].fillna(df["Price"].mean(), inplace=True)
+print("\nData after filling missing values:")
+print(df)
